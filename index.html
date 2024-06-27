@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创意导航标签页</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body id="bgid" onload="changeBg()">
+    <header>
+        <!-- 开头的三个功能栏 -->
+        <div class="tabbar">
+           <ul>
+            <li class="item poin" id="child1">
+                <a onclick="changeBg()">
+                    <span class="icon">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                    </span>
+                    <span class="text">切换背景</span>
+                </a>
+            </li>
+            <li></li>
+            <li class="item active poin" id="child2">
+                <a href="index.html">
+                    <span class="icon">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span class="text">主页</span>
+                </a>
+            </li>
+            <li></li>
+            <li class="item poin" id="child3">
+                <a onclick="addFocus2()">
+                    <span class="icon">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                    </span>
+                    <span class="text">关于我</span>
+                </a>
+            </li>
+           </ul>
+        </div>
+        <div class="top">
+            <div class="img">
+                <div class="stc">
+                    <span class="stc_font"><p id="randstc">大河之水天上来</p></span>
+                </div>
+                <a onclick="generateRandomSentence()">
+                    <img src="img/touxiang.png">
+                </a>
+                <script>
+                    const sentences = [
+                        "Hello, world!","我爱玩原神！","大河之水天上来","绝区零真好玩","瓦！","你这个年纪是怎么睡得着的！",
+                        "Learning new things.","未来以来，不负韶华","大工是一所好学校","喵~~","孙季真狗！"
+                    ];
+                    function generateRandomSentence() {
+                        const sentenceContainer = document.getElementById('randstc');
+                        const randomIndex = Math.floor(Math.random() * sentences.length);
+                        const randomSentence = sentences[randomIndex];
+                        sentenceContainer.textContent = randomSentence;
+                    }
+                </script>
+            </div>
+        </div>
+        <!-- 主体部分 -->
+        <div class="middle">
+            <div class="middle_top">
+                <div class="leftbox" id="ltbox">
+                    <em><img src="img/clock.svg" alt=""></em>
+			        <span id="lttime"></span>
+                </div>
+                <div class="midbox">
+                    <form action="http://www.baidu.com/s"  method="get" target="_blank">
+                        <input type="search" name="wd" id="seaid" placeholder="百度一下" autofocus="autofocus" autocomplete="off">
+                        <input type="image" src="img/搜索.png" id="subid" alt="submit">
+                    </form>
+                </div>
+                <div class="rightbox" id="rtbox">
+                </div>
+            </div>
+            <!-- 软件导航部分 -->
+            <div class="container">
+                <ul>
+                    <li><a href="https://www.bilibili.com/" target="_blank"><img src="img/bilibili.png" alt=""></a></li>
+                    <li><a href="https://www.baidu.com/" target="_blank"><img src="img/百度.png" alt=""></a></li>
+                    <li><a href="https://map.baidu.com/" target="_blank"><img src="img/百度地图.png" alt=""></a></li>
+                    <li><a href="https://tieba.baidu.com/" target="_blank"><img src="img/百度贴吧.png" alt=""></a></li>
+                    <li><a href="https://github.com/" target="_blank"><img src="img/Github.png" alt=""></a></li>
+                    <li><a href="https://www.taptap.cn/" target="_blank"><img src="img/taptap.png" alt=""></a></li>
+                    <li><a href="https://www.pixiv.net/" target="_blank"><img src="img/pixiv.png" alt=""></a></li>
+                    <li><a href="https://weixin.qq.com/" target="_blank"><img src="img/微信.png" alt=""></a></li>
+                    <li><a href="https://im.qq.com/index/" target="_blank"><img src="img/QQ.png" alt=""></a></li>
+                    <li><a href="https://www.ele.me/" target="_blank"><img src="img/饿了么外卖.png" alt=""></a></li>
+                    <li><a href="https://www.jd.com/" target="_blank"><img src="img/京东.png" alt=""></a></li>
+                    <li><a href="https://www.taobao.com/" target="_blank"><img src="img/淘宝.png" alt=""></a></li>
+                    <li><a href="https://www.qidian.com/" target="_blank"><img src="img/起点中文网.png" alt=""></a></li>
+                    <li><a href="https://twitter.com" target="_blank"><img src="img/推特.png" alt=""></a></li>
+                    <li><a href="https://weibo.com/" target="_blank"><img src="img/微博.png" alt=""></a></li>
+                    <li><a href="https://goofish.com/" target="_blank"><img src="img/闲鱼.png" alt=""></a></li>
+                    <li><a href="https://www.ctrip.com/" target="_blank"><img src="img/携程旅行.png" alt=""></a></li>
+                    <li><a href="https://www.zhihu.com/" target="_blank"><img src="img/知乎.png" alt=""></a></li>
+                    <li><a href="https://www.cnki.net/" target="_blank"><img src="img/知网.png" alt=""></a></li>
+                    <li><a href="https://www.icourse163.org/" target="_blank"><img src="img/中国大学MOOC.png" alt=""></a></li>
+                </ul>
+            </div>
+            <!-- 多功能区部分 -->
+            <div class="block">
+                <ul>
+                    <!-- 游戏导航轮播图 -->
+                    <li>
+                        <div class="slidershow midd" id="li1">
+                            <div class="slides">
+                                <input type="radio" name="r" id="r1" checked>
+                                <input type="radio" name="r" id="r2">
+                                <input type="radio" name="r" id="r3">
+                                <input type="radio" name="r" id="r4">
+                                <input type="radio" name="r" id="r5">
+                                <div class="slide s1">
+                                    <a href="https://sr.mihoyo.com/" target="_blank"><img src="img/bengtie.jpg" alt=""></a>
+                                </div>
+                                <div class="slide">
+                                    <a href="https://ys.mihoyo.com/" target="_blank"><img src="img/yuanshen.jpg" alt=""></a>
+                                </div>
+                                <div class="slide">
+                                    <a href="https://www.minecraft.net/zh-hans" target="_blank"><img src="img/MC.jpg" alt=""></a>
+                                </div>
+                                <div class="slide">
+                                    <a href="https://zzz.mihoyo.com/main/" target="_blank"><img src="img/zzz.jpg" alt=""></a>
+                                </div>
+                                <div class="slide">
+                                    <a href="https://val.qq.com/main.html" target="_blank"><img src="img/wa.png" alt=""></a>
+                                </div>
+                            </div>
+
+                            <div class="navigation">
+                                <label for="r1" class="bar"></label>
+                                <label for="r2" class="bar"></label>
+                                <label for="r3" class="bar"></label>
+                                <label for="r4" class="bar"></label>
+                                <label for="r5" class="bar"></label>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 微博热搜导航部分 -->
+                    <li>
+                        <div id="li2">
+                            <div class="b_top">
+                                <span class="b_tl">
+                                    <a href="https://s.weibo.com/top/summary?cate=realtimehot" target="_blank"><img src="img/热搜.png" art=""></a>
+                                </span>
+                                <span class="b_tr">
+                                    <a href="https://weibo.com/" target="_blank"><img src="img/新浪微博-01.png" art=""></a>
+                                </span>
+                            </div>
+                            <div class="b_midd">
+                                <span class="part">
+                                    <span class="hot_rank" id="rank1">1</span>
+                                    <a href="https://s.weibo.com/weibo?q=%23%E5%85%A8%E7%8F%AD49%E4%BA%BA48%E4%B8%AA%E9%AB%98%E8%80%83%E8%BF%87600%E5%88%86%23&t=31&band_rank=1&Refer=top" target="_blank"><h1 class="hot_list">全班49人48个高考过600分</h1></a>
+                                </span>
+                                <span class="part">
+                                    <span class="hot_rank" id="rank2">2</span>
+                                    <a href="https://s.weibo.com/weibo?q=%23%E5%A5%B3%E5%AD%A9%E8%80%83726%E5%88%86%E8%BD%B0%E5%8A%A8%E5%85%A8%E5%B0%8F%E5%8C%BA%E9%82%BB%E5%B1%85%E6%94%BE%E7%83%9F%E8%8A%B1%23&t=31&band_rank=2&Refer=top" target="_blank"><h1 class="hot_list">女孩考726分轰动全小区邻居放烟花</h1></a>
+                                </span>
+                                <span class="part">
+                                    <span class="hot_rank" id="rank3">3</span>
+                                    <a href="https://s.weibo.com/weibo?q=%23%E9%AB%98%E6%A0%A1%E6%AF%95%E4%B8%9A%E5%AD%A3%E5%B0%B1%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0%23&t=31&band_rank=3&Refer=top" target="_blank"><h1 class="hot_list">高校毕业季就是最好的招生简章</h1></a>
+                                </span>
+                                <span class="part">
+                                    <span class="hot_rank" id="rank4">4</span>
+                                    <a href="https://s.weibo.com/weibo?q=%23%E5%B0%8F%E5%A4%AD%E7%AB%8B%E7%89%8C%E8%A2%AB%E6%89%94%E5%9E%83%E5%9C%BE%E6%A1%B6%23&t=31&band_rank=4&Refer=top" target="_blank"><h1 class="hot_list">小夭立牌被扔垃圾桶</h1></a>
+                                </span>
+                                <span class="part">
+                                    <span class="hot_rank" id="rank5">5</span>
+                                    <a href="https://s.weibo.com/weibo?q=%23%E9%9C%89%E9%9C%89%E9%AB%98%E6%AD%8C%E6%97%B6%E9%81%AD%E9%A3%9E%E8%99%AB%E5%85%A5%E5%8F%A3%23&t=31&band_rank=5&Refer=top" target="_blank"><h1 class="hot_list">霉霉高歌时遭飞虫入口 </h1></a>
+                                </span>
+                                <img src="img/xqb-热搜.png" art="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 学校相关部分 -->
+                    <li>
+                        <div class="dut">
+                            <a href="https://www.dlut.edu.cn/" target="_blank"><img src="img/dut1.jpg" art=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dut">
+                            <a href="https://www.dlut.edu.cn/" target="_blank"><img src="img/dut2.jpg" art=""></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="fontbox">
+                <h1>声明：此作品仅用于大连理工大学软件学院2023-2024学年第三学期认识实习大作业</h1>
+            </span>
+            <span class="picbox">
+                <img src="img/dutxiaoxun.png" art="">
+            </span>
+        </div>
+        <div class="side">
+            <li>
+                <a onclick="addFocus()">
+                    <span>
+                       <i class="fas fa-plus-circle" aria-hidden="true"></i>
+                    </span>
+                    <span class="text">便签</span>
+                </a>
+            </li>
+        </div>
+    </header>
+    <div id="" class="inf">
+        <span class="text">姓名：郑磊<br>班级：软2305<br>学号：20232241054</span>
+        <span class="logo"><img src="img/duttubiao.png" art=""></span>
+    </div>
+    <div class="btm">
+		<textarea id="txt" type="text"  maxlength="6"></textarea>
+		<input type="button" id="add"  value="Add">	
+		<input type="button" id="closeBox" onclick="addFocus()" value="">	
+		<ul class= "notes"></ul>
+	</div>
+<script src="js/index.js"></script>
+</body>
+</html>
